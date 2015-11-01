@@ -4,10 +4,10 @@ Checksum
 Create checksums with ease
 
 ##Installation
-Download and install <code>checksum</code> with go get
+Download and install <code>go-checksum</code> with go get
 
 ```
-go get github.com/rauwekost/checksum
+go get github.com/rauwekost/go-checksum
 ```
 
 ##Usage
@@ -18,7 +18,7 @@ import (
   "crypto"
   "fmt"
 
-  "github.com/rauwekost/checksum"
+  "github.com/rauwekost/go-checksum"
 )
 
 func main() {
