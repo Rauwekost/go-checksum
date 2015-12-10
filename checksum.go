@@ -50,7 +50,7 @@ func String(s string, method crypto.Hash) (string, error) {
 	return fmt.Sprintf("%x", h.Sum(nil)), nil
 }
 
-//
+//File returns a hash for the given file
 func File(path string, method crypto.Hash) (string, error) {
 	file, err := os.Open(path)
 
