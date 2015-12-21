@@ -38,7 +38,7 @@ func createHash(method crypto.Hash) (hash.Hash, error) {
 	return h, nil
 }
 
-//returns a hash for the given string
+//String returns a hash for the given string
 func String(s string, method crypto.Hash) (string, error) {
 	h, err := createHash(method)
 	if err != nil {
@@ -47,6 +47,16 @@ func String(s string, method crypto.Hash) (string, error) {
 
 	io.WriteString(h, s)
 
+	return fmt.Sprintf("%x", h.Sum(nil)), nil
+}
+
+//Bytes return a hash for the given bytes
+func Bytes(b []byte, method crypto.Hash) (string, error) {
+	h, err := createHash(method)
+	if err != nil {
+		return "", err
+	}
+	io.WriteString(h, string(b))
 	return fmt.Sprintf("%x", h.Sum(nil)), nil
 }
 
